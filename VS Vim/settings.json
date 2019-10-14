@@ -1,0 +1,49 @@
+{
+  "editor.minimap.enabled": false,
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.colorTheme": "Dracula",
+  "git.autofetch": true,
+  "explorer.confirmDelete": false,
+  "git.confirmSync": false,
+  "git.enableSmartCommit": true,
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "files.exclude": {
+    "**/.classpath": true,
+    "**/.project": true,
+    "**/.settings": true,
+    "**/.factorypath": true
+  },
+  "editor.formatOnSave": false,
+  "explorer.confirmDragAndDrop": false,
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "j"],
+      "after": ["<Esc>"]
+    }
+  ],
+  "vim.normalModeKeyBindings": [
+    {
+      "before": ["<Enter>"],
+      "after": ["o", "<Esc>"]
+    }
+  ],
+  "vim.handleKeys": {
+    "<C-j>": false,
+    "<C-w>": false,
+    "<C-s>": false
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "window.zoomLevel": 0
+}
