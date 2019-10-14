@@ -1,0 +1,57 @@
+! Basic --------------------------------
+URxvt.scrollBar: false
+!URxvt.depth: 32
+!URxvt.borderLess: true
+
+! Font settings ------------------------
+URxvt.font: xft:Source Code Pro:size=8
+
+! Colors -------------------------------
+! special
+*.foreground:   #f8f8f2
+!*.background:   rgba:1111/1111/1111/dddd
+*.background:   #272822
+*.cursorColor:  #f8f8f2
+
+! black
+*.color0:       #272822
+*.color8:       #75715e
+
+! red
+*.color1:       #f92672
+*.color9:       #f92672
+
+! green
+*.color2:       #a6e22e
+*.color10:      #a6e22e
+
+! yellow
+*.color3:       #f4bf75
+*.color11:      #f4bf75
+
+! blue
+*.color4:       #66d9ef
+*.color12:      #66d9ef
+
+! magenta
+*.color5:       #ae81ff
+*.color13:      #ae81ff
+
+! cyan
+*.color6:       #a1efe4
+*.color14:      #a1efe4
+
+! white
+*.color7:       #f8f8f2
+*.color15:      #f9f8f5
+
+! Extentions ---------------------------
+URxvt.perl-ext-common: default,url-select,fullscreen
+
+! Fullscreen
+URxvt.keysym.F11: perl:fullscreen:switch
+
+! Url-select
+URxvt.keysym.M-u: perl:url-select:select_next
+URxvt.url-select.launcher: /usr/bin/xdg-open
+URxvt.url-select.underline: true
