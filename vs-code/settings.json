@@ -42,11 +42,6 @@
             ]
         }
     ],
-    "vim.handleKeys": {
-        "<C-j>": false,
-        "<C-w>": false,
-        "<C-s>": false
-    },
     "[json]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
