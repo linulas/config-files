@@ -1,9 +1,4 @@
 {
-	// Place your snippets for javascript here. Each snippet is defined under a snippet name and has a prefix, body and 
-	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
-	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
-	// same ids are connected.
-
 	 "Print to console": {
 	 	"prefix": "log",
 	 	"body": [
@@ -25,15 +20,46 @@
 		 ],
 		 "description": "An API-Controller template"
 	 },
-	 "Map state": {
-		 "prefix": "mapstate",
+	 "React container": {
+		"prefix": "recont",
+		"body": [
+			"import React, { Component } from 'react';\n",
+			"export class Container extends Component { render() { return (<div><h1>Container</h1></div>) } }\n",
+			"export default Container;"
+		],
+		"description": "A react container template"
+	 },
+	 "React Fetch": {
+		 "prefix": "fetch",
+		 "body": [
+			 "fetch(apiUrl, {}).then(response => {})"
+		 ],
+		 "description": "Http request method for react"
+	 },
+	 "React Redux Action": {
+		 "prefix": "reaction",
+		 "body": [
+			 "export const action = () => { return {} }"
+		 ],
+		 "description": "A react redux action"
+	 },
+	 "React Redux Root Reducer": {
+		 "prefix": "rootred",
+		 "body": [
+			"const initState = {};\n",
+			"const rootReducer = (state = initState, action) => { return state; };\n",
+			"export default rootReducer;"
+		 ] 
+	 },
+	 "React Redux Map state": {
+		 "prefix": "mapsta",
 		 "body": [
 			 "const mapStateToProps = (state, ownProps) => { return { cookies: ownProps }; };"
 		 ],
 		 "description": "Maps react states to props when using redux"
 	 },
-	 "Map Dispatch": {
-		 "prefix": "mapstate",
+	 "React Redux Map Dispatch": {
+		 "prefix": "mapdis",
 		 "body": [
 			 "const mapDispatchToProps = dispatch => { return {}; };"
 		 ],
