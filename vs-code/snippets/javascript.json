@@ -19,50 +19,5 @@
 			"export default Api;"
 		 ],
 		 "description": "An API-Controller template"
-	 },
-	 "React container": {
-		"prefix": "recont",
-		"body": [
-			"import React, { Component } from 'react';\n",
-			"export class Container extends Component { render() { return (<div><h1>Container</h1></div>) } }\n",
-			"export default Container;"
-		],
-		"description": "A react container template"
-	 },
-	 "React Fetch": {
-		 "prefix": "fetch",
-		 "body": [
-			 "fetch(apiUrl, {}).then(response => {})"
-		 ],
-		 "description": "Http request method for react"
-	 },
-	 "React Redux Action": {
-		 "prefix": "reaction",
-		 "body": [
-			 "export const action = () => { return {} }"
-		 ],
-		 "description": "A react redux action"
-	 },
-	 "React Redux Root Reducer": {
-		 "prefix": "rootred",
-		 "body": [
-			"const initState = {};\n",
-			"const rootReducer = (state = initState, action) => { return state; };\n",
-			"export default rootReducer;"
-		 ] 
-	 },
-	 "React Redux Map state": {
-		 "prefix": "mapsta",
-		 "body": [
-			 "const mapStateToProps = (state, ownProps) => { return { cookies: ownProps }; };"
-		 ],
-		 "description": "Maps react states to props when using redux"
-	 },
-	 "React Redux Map Dispatch": {
-		 "prefix": "mapdis",
-		 "body": [
-			 "const mapDispatchToProps = dispatch => { return {}; };"
-		 ],
-		 "description": "Maps react dispatches to props when using redux"
 	 }
 }
