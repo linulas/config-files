@@ -70,7 +70,14 @@ return {
   ["hrsh7th/cmp-buffer"] = {},
   ["hrsh7th/vim-vsnip"] = {},
 
-  -- overrde plugin configs
+  -- override plugin configs
+  ["goolord/alpha-nvim"] = {
+    disable = false,
+    override_options = overrides.alpha,
+  },
+  ["nvim-telescope/telescope.nvim"] = {
+    override_options = overrides.telescope,
+  },
   ["nvim-treesitter/nvim-treesitter"] = {
     override_options = overrides.treesitter,
   },
@@ -99,9 +106,6 @@ return {
   },
 
   -- fix plugin not loading
-  ["goolord/alpha-nvim"] = {
-    disable = false,
-  },
   ["folke/which-key.nvim"] = {
     disable = false,
   },
