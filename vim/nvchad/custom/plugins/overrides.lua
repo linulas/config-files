@@ -43,7 +43,7 @@ M.alpha = {
 
 M.telescope = {
   defaults = {
-    file_ignore_patterns = { "node_modules", "cache", "build", ".next", "target", ".git" },
+    file_ignore_patterns = { "node_modules", "cache", "build", ".next", "target", ".git", ".svelte-kit" },
   },
 }
 M.treesitter = {
@@ -79,11 +79,14 @@ M.mason = {
     "typescript-language-server",
     "emmet-ls",
     "json-lsp",
+    "svelte-language-server",
+    "json-lsp",
+    "prettierd",
 
     -- graphql
-    "graphql-language-server-cli",
+    "graphql-language-service-cli",
 
-    -- graphql
+    -- yaml
     "yaml-language-server",
 
     -- shell
@@ -92,6 +95,12 @@ M.mason = {
 
     -- rust
     "rust-analyzer",
+    "codelldb",
+
+    -- go
+    "gopls",
+    "golangci-lint",
+    "go-debug-adapter",
   },
 }
 
