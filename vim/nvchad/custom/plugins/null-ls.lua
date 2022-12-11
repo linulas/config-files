@@ -12,6 +12,7 @@ local sources = {
 
   -- Go
   b.diagnostics.golangci_lint,
+  b.formatting.gofumpt,
 
   -- webdev stuff
   b.formatting.prettierd,
