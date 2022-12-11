@@ -54,6 +54,7 @@ M.treesitter = {
     "typescript",
     "javascript",
     "rust",
+    "go",
     "toml",
     "graphql",
     "yaml",

@@ -3,6 +3,12 @@ local overrides = require "custom.plugins.overrides"
 return {
   -- custom plugins
   ["williamboman/mason-lspconfig.nvim"] = {},
+  ["ray-x/go.nvim"] = {
+    config = function()
+      require("go").setup()
+    end,
+  },
+  ["ray-x/guihua.lua"] = {},
   ["simrat39/rust-tools.nvim"] = {
     after = "nvim-lspconfig",
     config = function()
@@ -13,7 +19,7 @@ return {
             -- Hover actions
             vim.keymap.set("n", "<C-b>", rt.hover_actions.hover_actions, { buffer = bufnr })
             -- Code action groups
-            vim.keymap.set("n", "<Leader>a", rt.code_action_group.code_action_group, { buffer = bufnr })
+            vim.keymap.set("n", "<Leader>A", rt.code_action_group.code_action_group, { buffer = bufnr })
           end,
         },
       }
@@ -59,15 +65,9 @@ return {
       require "custom.plugins.null-ls"
     end,
   },
-
-  -- LSP completion source:
-  ["hrsh7th/cmp-nvim-lsp"] = {},
   -- Useful completion sources:
-  ["hrsh7th/cmp-nvim-lua"] = {},
   ["hrsh7th/cmp-nvim-lsp-signature-help"] = {},
   ["hrsh7th/cmp-vsnip"] = {},
-  ["hrsh7th/cmp-path"] = {},
-  ["hrsh7th/cmp-buffer"] = {},
   ["hrsh7th/vim-vsnip"] = {},
 
   -- override plugin configs
@@ -96,8 +96,6 @@ return {
   ["NvChad/nvterm"] = {
     override_options = overrides.nvterm,
   },
-  -- We are just modifying lspconfig's packer definition table
-  -- Put this in your custom plugins section i.e M.plugins field
   ["neovim/nvim-lspconfig"] = {
     config = function()
       require "plugins.configs.lspconfig"

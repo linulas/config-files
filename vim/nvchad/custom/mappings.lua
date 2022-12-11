@@ -5,12 +5,16 @@ M.ergo = {
   i = {
     ["jk"] = { "<ESC>", "escape insert mode", opts = { nowait = true } },
     ["kj"] = { "<ESC>", "escape insert mode", opts = { nowait = true } },
+    ["<C-d>"] = { "<C-d>zz", "Navigate half down and center cursor", opts = { nowait = true } },
+    ["<C-u>"] = { "<C-u>zz", "Navigate half up and center cursor", opts = { nowait = true } },
   },
   n = {
     ["s"] = { "<cmd> w <CR>", "save file", opts = { nowait = true } },
     ["S"] = { "<cmd> wa <CR>", "save all unsaved buffers", opts = { nowait = true } },
     ["q"] = { "<cmd> q <CR>", "quit", opts = { nowait = true } },
     ["Q"] = { "<cmd> q! <CR>", "force quit", opts = { nowait = true } },
+    ["<C-d>"] = { "<C-d>zz", "Navigate half down and center cursor", opts = { nowait = true } },
+    ["<C-u>"] = { "<C-u>zz", "Navigate half up and center cursor", opts = { nowait = true } },
   },
 }
 

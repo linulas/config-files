@@ -10,6 +10,9 @@ local sources = {
   -- Rust
   b.formatting.rustfmt,
 
+  -- Go
+  b.diagnostics.golangci_lint,
+
   -- webdev stuff
   b.formatting.prettierd,
 
