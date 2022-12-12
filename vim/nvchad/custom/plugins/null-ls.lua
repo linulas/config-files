@@ -9,6 +9,7 @@ local b = null_ls.builtins
 local sources = {
   -- Rust
   b.formatting.rustfmt,
+  b.diagnostics.ltrs,
 
   -- Go
   b.diagnostics.golangci_lint,

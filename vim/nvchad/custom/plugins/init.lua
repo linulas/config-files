@@ -2,29 +2,6 @@ local overrides = require "custom.plugins.overrides"
 
 return {
   -- custom plugins
-  ["williamboman/mason-lspconfig.nvim"] = {},
-  ["ray-x/go.nvim"] = {
-    config = function()
-      require("go").setup()
-    end,
-  },
-  ["ray-x/guihua.lua"] = {},
-  ["simrat39/rust-tools.nvim"] = {
-    after = "nvim-lspconfig",
-    config = function()
-      local rt = require "rust-tools"
-      rt.setup {
-        server = {
-          on_attach = function(_, bufnr)
-            -- Hover actions
-            vim.keymap.set("n", "<C-b>", rt.hover_actions.hover_actions, { buffer = bufnr })
-            -- Code action groups
-            vim.keymap.set("n", "<Leader>A", rt.code_action_group.code_action_group, { buffer = bufnr })
-          end,
-        },
-      }
-    end,
-  },
   ["mfussenegger/nvim-dap"] = {
     opt = true,
     event = "BufReadPre",
@@ -53,22 +30,12 @@ return {
       require("todo-comments").setup {}
     end,
   },
-  ["folke/trouble.nvim"] = {
-    requires = "kyazdani42/nvim-web-devicons",
-    config = function()
-      require("trouble").setup {}
-    end,
-  },
   ["jose-elias-alvarez/null-ls.nvim"] = {
     after = "nvim-lspconfig",
     config = function()
       require "custom.plugins.null-ls"
     end,
   },
-  -- Useful completion sources:
-  ["hrsh7th/cmp-nvim-lsp-signature-help"] = {},
-  ["hrsh7th/cmp-vsnip"] = {},
-  ["hrsh7th/vim-vsnip"] = {},
 
   -- override plugin configs
   ["goolord/alpha-nvim"] = {

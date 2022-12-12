@@ -1,14 +1,14 @@
 vim.opt.relativenumber = true
 
 -- Widnows specific
-vim.cmd [[
-set shell=powershell.exe
-set shellxquote=
-let &shellcmdflag = '-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command '
-let &shellquote   = ''
-let &shellpipe    = '| Out-File -Encoding UTF8 %s'
-let &shellredir   = '| Out-File -Encoding UTF8 %s'
-]]
+-- vim.cmd [[
+-- set shell=powershell.exe
+-- set shellxquote=
+-- let &shellcmdflag = '-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command '
+-- let &shellquote   = ''
+-- let &shellpipe    = '| Out-File -Encoding UTF8 %s'
+-- let &shellredir   = '| Out-File -Encoding UTF8 %s'
+-- ]]
 
 -- LSP Diagnostics Options Setup
 local sign = function(opts)

@@ -96,6 +96,7 @@ M.mason = {
     -- rust
     "rust-analyzer",
     "codelldb",
+    "rustfmt",
 
     -- go
     "gopls",

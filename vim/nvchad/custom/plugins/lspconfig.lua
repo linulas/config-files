@@ -15,8 +15,32 @@ local servers = {
 }
 
 for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup {
-    on_attach = on_attach,
-    capabilities = capabilities,
-  }
+  if lsp == "rust_analyzer" then
+    lspconfig.rust_analyzer.setup {
+      on_attach = on_attach,
+      settings = {
+        ["rust-analyzer"] = {
+          imports = {
+            granularity = {
+              group = "module",
+            },
+            prefix = "self",
+          },
+          cargo = {
+            buildScripts = {
+              enable = true,
+            },
+          },
+          procMacro = {
+            enable = true,
+          },
+        },
+      },
+    }
+  else
+    lspconfig[lsp].setup {
+      on_attach = on_attach,
+      capabilities = capabilities,
+    }
+  end
 end
