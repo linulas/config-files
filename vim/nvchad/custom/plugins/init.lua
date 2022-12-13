@@ -57,9 +57,6 @@ return {
     },
     override_options = overrides.nvimtree,
   },
-  ["hrsh7th/nvim-cmp"] = {
-    override_options = overrides.cmp,
-  },
   ["NvChad/nvterm"] = {
     override_options = overrides.nvterm,
   },
