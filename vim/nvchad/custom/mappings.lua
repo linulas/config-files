@@ -41,6 +41,13 @@ M.debug = {
     ["<leader>dq"] = { ":lua require('dap').close()<cr>", "Quit debugging", opts = { nowait = true } },
     ["<leader>de"] = { ":lua require('dapui').eval()<cr>", "Evaluate", opts = { nowait = true } },
     ["<leader>du"] = { ":lua require('dapui').toggle()<cr>", "Toggle UI", opts = { nowait = true } },
+    ["<leader>df"] = { ":lua require('dapui').float_element()<cr>", "Float element", opts = { nowait = true } },
+    ["<A-1>"] = { ":lua require('dap').step_over()<cr>", "Step over", opts = { nowait = true } },
+    ["<A-2>"] = { ":lua require('dap').step_into()<cr>", "Step into", opts = { nowait = true } },
+    ["<A-3>"] = { ":lua require('dap').step_out()<cr>", "Step out", opts = { nowait = true } },
+    ["<A-4>"] = { ":lua require('dap').continue()<cr>", "Continue", opts = { nowait = true } },
+    ["<A-5>"] = { ":lua require('dap').continue()<cr>", "Start debugging", opts = { nowait = true } },
+    ["<A-6>"] = { ":lua require'dap'.repl.open()<cr>", "Inspect state", opts = { nowait = true } },
   },
 }
 
@@ -71,7 +78,7 @@ M.buffernav = {
   },
 }
 
--- HACK: add custom mappings to fix nvchad issues
+-- HACK: add custom mappings to fix issues
 M.jatch = {
   n = {
     -- fix for toggling terminals in warp
@@ -94,6 +101,8 @@ M.jatch = {
       end,
       "lsp formatting",
     },
+    -- alternate mapping for <C-u> in warp
+    ["<S-u>"] = { "<C-u>zz", "Navigate half up and center cursor", opts = { nowait = true } },
   },
   t = {
     ["<M-b>"] = {

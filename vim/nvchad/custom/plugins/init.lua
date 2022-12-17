@@ -15,6 +15,7 @@ return {
     },
     config = function()
       require("custom.plugins.dap").setup()
+      require("dap-go").setup()
     end,
   },
   ["phaazon/hop.nvim"] = {

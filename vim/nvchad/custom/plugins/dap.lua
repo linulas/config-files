@@ -26,21 +26,21 @@ local function configure()
   vim.fn.sign_define("DapStopped", dap_breakpoint.stopped)
   vim.fn.sign_define("DapBreakpointRejected", dap_breakpoint.rejected)
 
-  local dap = require('dap')
+  local dap = require "dap"
   dap.adapters.lldb = {
-    type = 'executable',
-    command = '/usr/local/opt/llvm/bin/lldb-vscode', -- adjust as needed, must be absolute path
-    name = 'lldb'
+    type = "executable",
+    command = "/usr/local/opt/llvm/bin/lldb-vscode", -- adjust as needed, must be absolute path
+    name = "lldb",
   }
   dap.configurations.cpp = {
-  {
-      name = 'Launch',
-      type = 'lldb',
-      request = 'launch',
+    {
+      name = "Launch",
+      type = "lldb",
+      request = "launch",
       program = function()
-        return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+        return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
       end,
-      cwd = '${workspaceFolder}',
+      cwd = "${workspaceFolder}",
       stopOnEntry = false,
       args = {},
 
@@ -58,8 +58,6 @@ local function configure()
       -- runInTerminal = false,
     },
   }
-
-  -- If you want to use this for Rust and C, add something like this:
   dap.configurations.rust = dap.configurations.cpp
 end
 

@@ -101,7 +101,7 @@ M.mason = {
     -- go
     "gopls",
     "golangci-lint",
-    "go-debug-adapter",
+    -- "go-debug-adapter",
     "gofumpt",
   },
 }
