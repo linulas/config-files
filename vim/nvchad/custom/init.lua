@@ -1,5 +1,15 @@
 vim.opt.relativenumber = true
 
+-- disable diagnostics for env files
+local group = vim.api.nvim_create_augroup("__env", {clear=true})
+vim.api.nvim_create_autocmd("BufEnter", {
+  pattern = ".env",
+  group = group,
+  callback = function(args)
+    vim.diagnostic.disable(args.buf)
+  end
+})
+
 -- Widnows specific
 -- vim.cmd [[
 -- set shell=powershell.exe
@@ -59,6 +69,6 @@ vim.opt.relativenumber = true
 -- ]]
 
 -- Treesitter folding
--- vim.wo.foldmethod = "expr"
--- vim.wo.foldexpr = "nvim_treesitter#foldexpr()"
--- vim.opt.foldenable = false
+vim.wo.foldmethod = "expr"
+vim.wo.foldexpr = "nvim_treesitter#foldexpr()"
+vim.opt.foldenable = false

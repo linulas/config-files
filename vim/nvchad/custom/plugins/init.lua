@@ -15,7 +15,12 @@ return {
     },
     config = function()
       require("custom.plugins.dap").setup()
-      require("dap-go").setup()
+    end,
+  },
+  ["folke/trouble.nvim"] = {
+    requires = "kyazdani42/nvim-web-devicons",
+    config = function()
+      require("trouble").setup {}
     end,
   },
   ["phaazon/hop.nvim"] = {
@@ -35,6 +40,12 @@ return {
     after = "nvim-lspconfig",
     config = function()
       require "custom.plugins.null-ls"
+    end,
+  },
+  ["kylechui/nvim-surround"] = {
+    tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+    config = function()
+      require("nvim-surround").setup {}
     end,
   },
 

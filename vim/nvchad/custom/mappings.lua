@@ -30,6 +30,12 @@ M.ergo = {
   },
 }
 
+M.lsp = {
+  n = {
+    ["<leader>q"] = { "<cmd>TroubleToggle workspace_diagnostics<cr>", "Troubleshoot workspace", opts = { nowait = true } },
+  }
+}
+
 M.debug = {
   n = {
     ["<leader>d1"] = { ":lua require('dap').step_over()<cr>", "Step over", opts = { nowait = true } },
@@ -65,10 +71,10 @@ M.find = {
 M.telescope = {
   plugin = true,
 
-  n = {
-    -- find
-    ["<leader>ff"] = { "<cmd> Telescope find_files hidden=true no_ignore=true <CR>", "find files" },
-  },
+  -- n = {
+  --   -- find
+  --   ["<leader>ff"] = { "<cmd> Telescope find_files hidden=true no_ignore=true <CR>", "find files" },
+  -- },
 }
 
 M.buffernav = {

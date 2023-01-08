@@ -58,6 +58,7 @@ M.treesitter = {
     "toml",
     "graphql",
     "yaml",
+    "svelte",
   },
   auto_install = true,
   rainbow = {
@@ -82,6 +83,7 @@ M.mason = {
     "svelte-language-server",
     "json-lsp",
     "prettierd",
+    "eslint_d",
 
     -- graphql
     "graphql-language-service-cli",
@@ -139,6 +141,8 @@ M.nvterm = {
         height = 0.72,
         border = "single",
       },
+      horizontal = { location = "rightbelow", split_ratio = 0.5 },
+      vertical = { location = "rightbelow", split_ratio = 0.3 },
     },
   },
 }

@@ -77,6 +77,22 @@ local function configure_exts()
   dap.listeners.before.event_exited["dapui_config"] = function()
     dapui.close()
   end
+
+  require("dap-go").setup {
+    -- Additional dap configurations can be added.
+    -- dap_configurations accepts a list of tables where each entry
+    -- represents a dap configuration. For more details do:
+    -- :help dap-configuration
+    dap_configurations = {
+      {
+        type = "go",
+        request = "attach",
+        name = "Attach to Go Process",
+        mode = "local",
+        processId = require("dap.utils").pick_process,
+      },
+    },
+  }
 end
 
 function M.setup()
