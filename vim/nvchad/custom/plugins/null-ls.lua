@@ -9,15 +9,44 @@ local b = null_ls.builtins
 
 local sources = {
   -- Rust
-  b.formatting.rustfmt,
+  b.formatting.rustfmt.with { extra_args = { "--edition", "2018" } },
+  -- b.formatting.dprint,
   -- b.diagnostics.ltrs,
 
   -- Go
   -- b.diagnostics.golangci_lint,
   b.formatting.gofumpt,
 
+  -- C++
+  b.formatting.clang_format,
+
+  -- FIX: prettierd formatting not working
+
   -- webdev stuff
-  b.formatting.prettierd.with {
+  -- b.formatting.prettierd.with {
+  --   filetypes = {
+  --     "javascript",
+  --     "javascriptreact",
+  --     "typescript",
+  --     "typescriptreact",
+  --     "vue",
+  --     "css",
+  --     "scss",
+  --     "less",
+  --     "html",
+  --     "json",
+  --     "jsonc",
+  --     "yaml",
+  --     "markdown",
+  --     "markdown.mdx",
+  --     "graphql",
+  --     "handlebars",
+  --     "svelte",
+  --   },
+  -- },
+
+  -- NOTE: temporary until above issue is fixed
+  b.formatting.prettier.with {
     filetypes = {
       "javascript",
       "javascriptreact",
@@ -38,7 +67,7 @@ local sources = {
       "svelte",
     },
   },
-  -- b.code_actions.eslint_d,
+  b.code_actions.eslint_d,
   -- b.diagnostics.eslint_d,
 
   -- Lua

@@ -17,6 +17,9 @@ local servers = {
   "yamlls",
   "gopls",
   "graphql",
+  "clangd",
+  "marksman",
+  "csharp_ls",
 }
 
 for _, lsp in ipairs(servers) do
@@ -35,6 +38,7 @@ for _, lsp in ipairs(servers) do
             buildScripts = {
               enable = true,
             },
+            features = { "models", "mongo" },
           },
           procMacro = {
             enable = true,
@@ -42,6 +46,15 @@ for _, lsp in ipairs(servers) do
         },
       },
     }
+  -- elseif lsp == "omnisharp" then
+  --   local pid = vim.fn.getpid()
+  --   local omnisharp_bin = "/Users/linusbrannstrom/.local/share/nvim/mason/bin/omnisharp"
+  --   lspconfig.omnisharp.setup {
+  --     on_attach = on_attach,
+  --     capabilities = capabilities,
+  --     cmd = { omnisharp_bin, "--languageserver", "--hostPID", tostring(pid) },
+  --     filetypes = { "cs", "vb" },
+  --   }
   else
     lspconfig[lsp].setup {
       on_attach = on_attach,

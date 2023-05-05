@@ -32,6 +32,13 @@ local function configure()
     command = "/usr/local/opt/llvm/bin/lldb-vscode", -- adjust as needed, must be absolute path
     name = "lldb",
   }
+
+  dap.adapters.coreclr = {
+    type = "executable",
+    command = "/usr/local/netcoredbg",
+    args = { "--interpreter=vscode"},
+  }
+
   dap.configurations.cpp = {
     {
       name = "Launch",
@@ -55,7 +62,18 @@ local function configure()
       --
       -- But you should be aware of the implications:
       -- https://www.kernel.org/doc/html/latest/admin-guide/LSM/Yama.html
-      -- runInTerminal = false,
+      -- runInTerminal = true,
+    },
+  }
+  dap.configurations.cs = {
+    {
+      type = "coreclr",
+      name = "launch - netcoredbg",
+      request = "launch",
+      preLaunchTask = "build",
+      program = function()
+        return vim.fn.input("Path to dll", vim.fn.getcwd() .. "/bin/Debug/", "file")
+      end,
     },
   }
   dap.configurations.rust = dap.configurations.cpp

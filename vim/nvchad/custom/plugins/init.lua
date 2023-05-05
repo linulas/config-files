@@ -2,6 +2,20 @@ local overrides = require "custom.plugins.overrides"
 
 return {
   -- custom plugins
+  ["jackMort/ChatGPT.nvim"] = {
+    opt = true,
+    setup = function()
+      require("core.lazy_load").on_file_open "ChatGPT.nvim"
+    end,
+    config = function()
+      require("chatgpt").setup {}
+    end,
+    requires = {
+      "MunifTanjim/nui.nvim",
+      "nvim-telescope/telescope.nvim",
+      "nvim-lua/plenary.nvim",
+    },
+  },
   ["mfussenegger/nvim-dap"] = {
     opt = true,
     event = "BufReadPre",
@@ -48,6 +62,24 @@ return {
       require("nvim-surround").setup {}
     end,
   },
+  ["JellyApple102/flote.nvim"] = {
+    config = function()
+      require("flote").setup {}
+    end,
+  },
+  ["iamcco/markdown-preview.nvim"] = {
+    run = function()
+      vim.fn["mkdp#util#install"]()
+    end,
+    setup = function()
+      vim.g.mkdp_filetypes = { "markdown" }
+    end,
+    ft = { "markdown" },
+  },
+  ["MunifTanjim/nui.nvim"] = {},
+  ["kdheepak/lazygit.nvim"] = {},
+  ["cdelledonne/vim-cmake"] = {},
+  ["github/copilot.vim"] = {},
 
   -- override plugin configs
   ["goolord/alpha-nvim"] = {
@@ -63,12 +95,12 @@ return {
   ["williamboman/mason.nvim"] = {
     override_options = overrides.mason,
   },
-  ["kyazdani42/nvim-tree.lua"] = {
-    requires = {
-      "nvim-tree/nvim-web-devicons", -- optional, for file icons
-    },
-    override_options = overrides.nvimtree,
-  },
+  -- ["kyazdani42/nvim-tree.lua"] = {
+  --   requires = {
+  --     "nvim-tree/nvim-web-devicons", -- optional, for file icons
+  --   },
+  --   override_options = overrides.nvimtree,
+  -- },
   ["NvChad/nvterm"] = {
     override_options = overrides.nvterm,
   },

@@ -1,5 +1,25 @@
 local M = {}
 
+M.ai = {
+  n = {
+    ["<leader>oc"] = { ":ChatGPT<CR>", "Open ChatGPT", opts = { nowait = true } },
+    ["<leader>oa"] = { ":ChatGPTActAs<CR>", "Open ChatGPT act as prompts", opts = { nowait = true } },
+    ["<leader>oe"] = {
+      "<cmd>ChatGPTEditWithInstructions<CR>",
+      "Open ChatGPT edit with instructions",
+      opts = { nowait = true },
+    },
+    ["<leader>cp"] = { ":Copilot<CR>", "Use copilot", opts = { nowait = true } },
+  },
+  v = {
+    ["<leader>e"] = {
+      "<ESC><cmd>ChatGPTEditWithInstructions<CR>",
+      "🔂 Open ChatGPT edit with instructions",
+      opts = { nowait = true },
+    },
+  },
+}
+
 M.ergo = {
   i = {
     ["jk"] = { "<ESC>", "escape insert mode", opts = { nowait = true } },
@@ -12,6 +32,7 @@ M.ergo = {
     ["S"] = { "<cmd> wa <CR>", "save all unsaved buffers", opts = { nowait = true } },
     ["q"] = { "<cmd> q <CR>", "quit", opts = { nowait = true } },
     ["Q"] = { "<cmd> q! <CR>", "force quit", opts = { nowait = true } },
+    ["<ENTER>"] = { "o<ESC>", "New line", opts = { nowait = true } },
     ["<C-d>"] = { "<C-d>zz", "Navigate half down and center cursor", opts = { nowait = true } },
     ["<C-u>"] = { "<C-u>zz", "Navigate half up and center cursor", opts = { nowait = true } },
     ["!"] = { ":! ", "Command", opts = { nowait = true } },
@@ -30,10 +51,35 @@ M.ergo = {
   },
 }
 
+M.notes = {
+  n = {
+    ["<leader>n"] = { ":Flote<CR>", "📝 Project notes", opts = { nowait = true } },
+    ["<leader>mp"] = { ":MarkdownPreview<CR>", "📑 Start markdown preview", opts = { nowait = true } },
+    ["<leader>ms"] = { ":MarkdownPreviewStop<CR>","🙅‍♂️ Stop markdown preview", opts = { nowait = true } },
+    ["<leader>mg"] = { ":Flote global<CR>", "🌏 Global notes", opts = { nowait = true } },
+    ["<leader>mn"] = { ":Flote manage<CR>", "⚙️  Manage notes", opts = { nowait = true } },
+  },
+}
+
 M.lsp = {
   n = {
-    ["<leader>q"] = { "<cmd>TroubleToggle workspace_diagnostics<cr>", "Troubleshoot workspace", opts = { nowait = true } },
-  }
+    ["<leader>q"] = {
+      "<cmd>TroubleToggle workspace_diagnostics<cr>",
+      "Troubleshoot workspace",
+      opts = { nowait = true },
+    },
+  },
+}
+
+M.cpp = {
+  n = {
+    ["cmg"] = { "<cmd>CMakeGenerate<cr>", "Cmake generate", opts = { nowait = true } },
+    ["cmb"] = { "<cmd>CMakeBuild<cr>", "Cmake build", opts = { nowait = true } },
+    ["cmo"] = { "<cmd>CMakeOpen<cr>", "Cmake open", opts = { nowait = true } },
+    ["cmc"] = { "<cmd>CMakeClose<cr>", "Cmake close", opts = { nowait = true } },
+    ["cmt"] = { "<cmd>CMakeTest<cr>", "Cmake test", opts = { nowait = true } },
+    ["cmi"] = { "<cmd>CMakeInstall<cr>", "Cmake install", opts = { nowait = true } },
+  },
 }
 
 M.debug = {
@@ -61,7 +107,7 @@ M.find = {
   n = {
     ["<leader>ft"] = { ":TodoTelescope<cr>", "Find all comment tags", opts = { nowait = true } },
     ["<leader>fk"] = {
-      ":TodoTelescope keywords=FIX,TODO,BUG<cr>",
+      ":TodoTelescope keywords=FIX,TODO,BUG,FIX<cr>",
       "Find keyword comment tags",
       opts = { nowait = true },
     },
@@ -77,15 +123,24 @@ M.telescope = {
   -- },
 }
 
-M.buffernav = {
+M.git = {
+  n = {
+    ["<leader>gg"] = { ":LazyGit<cr>", "Open lazygit", opts = { nowait = true } },
+    ["<leader>gh"] = { ":LazyGitFilterCurrentFile<cr>", "Open current buffer commits", opts = { nowait = true } },
+    ["<leader>gc"] = { ":LazyGitConfig<CR>", "Open lazygit config", opts = { nowait = true } },
+  },
+}
+
+M.bufferstuff = {
   n = {
     ["f"] = { ":HopWord<cr>", "Hop word on the entire buffer", opts = { nowait = true } },
     [";"] = { ":HopChar1CurrentLine<cr>", "Hop 1 character on current line", opts = { nowait = true } },
+    ["<leader>cb"] = { ":%bd|e#|bd#<CR>", "Close all except active buffer", opts = { nowait = true } },
   },
 }
 
 -- HACK: add custom mappings to fix issues
-M.jatch = {
+M.hack = {
   n = {
     -- fix for toggling terminals in warp
     ["<A-b>"] = {

@@ -43,7 +43,17 @@ M.alpha = {
 
 M.telescope = {
   defaults = {
-    file_ignore_patterns = { "node_modules", "cache", "build", ".next", "target", ".git", ".svelte-kit" },
+    file_ignore_patterns = {
+      "node_modules",
+      "cache",
+      "build",
+      ".next",
+      "target",
+      ".git",
+      ".svelte-kit",
+      "Debug",
+      "main.dSYM",
+    },
   },
 }
 M.treesitter = {
@@ -105,6 +115,9 @@ M.mason = {
     "golangci-lint",
     -- "go-debug-adapter",
     "gofumpt",
+
+    -- dotnet
+    "csharp-language-server",
   },
 }
 
