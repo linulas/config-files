@@ -1,5 +1,5 @@
 vim.opt.relativenumber = true
-vim.g.copilot_assume_mapped = true
+-- vim.g.copilot_assume_mapped = true
 
 -- disable diagnostics for env files
 local group = vim.api.nvim_create_augroup("__env", {clear=true})

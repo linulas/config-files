@@ -55,7 +55,7 @@ M.notes = {
   n = {
     ["<leader>n"] = { ":Flote<CR>", "📝 Project notes", opts = { nowait = true } },
     ["<leader>mp"] = { ":MarkdownPreview<CR>", "📑 Start markdown preview", opts = { nowait = true } },
-    ["<leader>ms"] = { ":MarkdownPreviewStop<CR>","🙅‍♂️ Stop markdown preview", opts = { nowait = true } },
+    ["<leader>ms"] = { ":MarkdownPreviewStop<CR>", "🙅‍♂️ Stop markdown preview", opts = { nowait = true } },
     ["<leader>mg"] = { ":Flote global<CR>", "🌏 Global notes", opts = { nowait = true } },
     ["<leader>mn"] = { ":Flote manage<CR>", "⚙️  Manage notes", opts = { nowait = true } },
   },
@@ -106,6 +106,7 @@ M.debug = {
 M.find = {
   n = {
     ["<leader>ft"] = { ":TodoTelescope<cr>", "Find all comment tags", opts = { nowait = true } },
+    ["<leader>fq"] = { ":TodoTrouble<cr>", "Open troble tags", opts = { nowait = true } },
     ["<leader>fk"] = {
       ":TodoTelescope keywords=FIX,TODO,BUG,FIX<cr>",
       "Find keyword comment tags",
@@ -136,6 +137,25 @@ M.bufferstuff = {
     ["f"] = { ":HopWord<cr>", "Hop word on the entire buffer", opts = { nowait = true } },
     [";"] = { ":HopChar1CurrentLine<cr>", "Hop 1 character on current line", opts = { nowait = true } },
     ["<leader>cb"] = { ":%bd|e#|bd#<CR>", "Close all except active buffer", opts = { nowait = true } },
+  },
+}
+
+M.bufferstuff = {
+  n = {
+    ["f"] = { ":HopWord<cr>", "Hop word on the entire buffer", opts = { nowait = true } },
+    [";"] = { ":HopChar1CurrentLine<cr>", "Hop 1 character on current line", opts = { nowait = true } },
+    ["<leader>cb"] = { ":%bd|e#|bd#<CR>", "Close all except active buffer", opts = { nowait = true } },
+  },
+}
+
+-- NOTE: Project specific mappings
+M.projects = {
+  n = {
+    ["<leader>;"] = {
+      ":! dotnet build ./src/MedborgarappHost/MedborgarappHost.csproj<CR>:lua require('dap').continue()<CR>",
+      "🐛 Build and debug Medborgarapp",
+      opts = { nowait = true },
+    },
   },
 }
 
