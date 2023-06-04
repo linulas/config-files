@@ -20,6 +20,9 @@ local sources = {
   -- C++
   b.formatting.clang_format,
 
+  -- C#
+  b.formatting.csharpier,
+
   -- FIX: prettierd formatting not working
 
   -- webdev stuff

@@ -9,7 +9,6 @@ M.ai = {
       "Open ChatGPT edit with instructions",
       opts = { nowait = true },
     },
-    ["<leader>cp"] = { ":Copilot<CR>", "Use copilot", opts = { nowait = true } },
   },
   v = {
     ["<leader>e"] = {
@@ -36,6 +35,7 @@ M.ergo = {
     ["<C-d>"] = { "<C-d>zz", "Navigate half down and center cursor", opts = { nowait = true } },
     ["<C-u>"] = { "<C-u>zz", "Navigate half up and center cursor", opts = { nowait = true } },
     ["!"] = { ":! ", "Command", opts = { nowait = true } },
+    ["td"] = { "i- [ ] ", "Add markdown task", opts = { nowait = true } },
     [")"] = {
       function()
         require("nvchad_ui.tabufline").tabuflineNext()
@@ -129,6 +129,8 @@ M.git = {
     ["<leader>gg"] = { ":LazyGit<cr>", "Open lazygit", opts = { nowait = true } },
     ["<leader>gh"] = { ":LazyGitFilterCurrentFile<cr>", "Open current buffer commits", opts = { nowait = true } },
     ["<leader>gc"] = { ":LazyGitConfig<CR>", "Open lazygit config", opts = { nowait = true } },
+    ["<leader>gd"] = { ":DiffviewOpen<CR>", "Open diffview", opts = { nowait = true } },
+    ["<leader>gq"] = { ":DiffviewClose<CR>", "Close diffview", opts = { nowait = true } },
   },
 }
 
@@ -145,6 +147,12 @@ M.bufferstuff = {
     ["f"] = { ":HopWord<cr>", "Hop word on the entire buffer", opts = { nowait = true } },
     [";"] = { ":HopChar1CurrentLine<cr>", "Hop 1 character on current line", opts = { nowait = true } },
     ["<leader>cb"] = { ":%bd|e#|bd#<CR>", "Close all except active buffer", opts = { nowait = true } },
+  },
+}
+
+M.ui = {
+  n = {
+    ["<leader>z"] = { ":ZenMode<cr>", "🧘 Toggle zen mode", opts = { nowait = true } },
   },
 }
 

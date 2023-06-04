@@ -114,9 +114,7 @@ local plugins = {
   {
     "JellyApple102/flote.nvim",
     cmd = "Flote",
-    config = function()
-      require("flote").setup {}
-    end,
+    config = require "custom.configs.flote",
   },
   {
     "iamcco/markdown-preview.nvim",
@@ -132,24 +130,20 @@ local plugins = {
     "cdelledonne/vim-cmake",
     cmd = { "CMakeGenerate", "CMakeBuild", "CMakeOpen", "CMakeClose", "CMakeTest", "CMakeInstall" },
   },
-  -- -- ["github/copilot.vim"] = {},
-  -- {
-  --   "jcdickinson/codeium.nvim",
-  --   -- cmd = "Codeium",
-  --   lazy = false,
-  --   dependencies = {
-  --     "nvim-lua/plenary.nvim",
-  --     "hrsh7th/nvim-cmp",
-  --   },
-  --   config = function()
-  --     require("codeium").setup {}
-  --   end,
-  -- },
   {
     "Exafunction/codeium.vim",
     lazy = false,
     config = require "custom.configs.codeium",
   },
+  {
+    "sindrets/diffview.nvim",
+    cmd = "DiffviewOpen",
+  },
+  -- {
+  --   "junegunn/goyo.vim",
+  --   cmd = "Goyo",
+  -- },
+  { "folke/zen-mode.nvim", cmd = "ZenMode" },
 }
 
 return plugins
