@@ -35,7 +35,7 @@ M.ergo = {
     ["<C-d>"] = { "<C-d>zz", "Navigate half down and center cursor", opts = { nowait = true } },
     ["<C-u>"] = { "<C-u>zz", "Navigate half up and center cursor", opts = { nowait = true } },
     ["!"] = { ":! ", "Command", opts = { nowait = true } },
-    ["td"] = { "i- [ ] ", "Add markdown task", opts = { nowait = true } },
+    ["td"] = { "i- [ ] #next ", "Add markdown task", opts = { nowait = true } },
     [")"] = {
       function()
         require("nvchad_ui.tabufline").tabuflineNext()
@@ -159,7 +159,7 @@ M.ui = {
 -- NOTE: Project specific mappings
 M.projects = {
   n = {
-    ["<leader>;"] = {
+    ["<leader>;m"] = {
       ":! dotnet build ./src/MedborgarappHost/MedborgarappHost.csproj<CR>:lua require('dap').continue()<CR>",
       "🐛 Build and debug Medborgarapp",
       opts = { nowait = true },
