@@ -20,6 +20,7 @@ local servers = {
   "clangd",
   "marksman",
   "csharp_ls",
+  "arduino_language_server"
 }
 
 for _, lsp in ipairs(servers) do
