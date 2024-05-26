@@ -20,7 +20,9 @@ local servers = {
   "clangd",
   "marksman",
   "csharp_ls",
-  "arduino_language_server"
+  "phpactor",
+  "arduino_language_server",
+  "vuels"
 }
 
 for _, lsp in ipairs(servers) do
@@ -40,7 +42,8 @@ for _, lsp in ipairs(servers) do
               enable = true,
             },
             -- features = { "models", "mongo" },
-            features = {},
+            -- features = { "ssr", "web" },
+            -- features = {},
           },
           procMacro = {
             enable = true,
@@ -48,15 +51,15 @@ for _, lsp in ipairs(servers) do
         },
       },
     }
-  -- elseif lsp == "omnisharp" then
-  --   local pid = vim.fn.getpid()
-  --   local omnisharp_bin = "/Users/linusbrannstrom/.local/share/nvim/mason/bin/omnisharp"
-  --   lspconfig.omnisharp.setup {
-  --     on_attach = on_attach,
-  --     capabilities = capabilities,
-  --     cmd = { omnisharp_bin, "--languageserver", "--hostPID", tostring(pid) },
-  --     filetypes = { "cs", "vb" },
-  --   }
+    -- elseif lsp == "omnisharp" then
+    --   local pid = vim.fn.getpid()
+    --   local omnisharp_bin = "/Users/linusbrannstrom/.local/share/nvim/mason/bin/omnisharp"
+    --   lspconfig.omnisharp.setup {
+    --     on_attach = on_attach,
+    --     capabilities = capabilities,
+    --     cmd = { omnisharp_bin, "--languageserver", "--hostPID", tostring(pid) },
+    --     filetypes = { "cs", "vb" },
+    --   }
   elseif lsp == "tailwindcss" then
     lspconfig.tailwindcss.setup {
       filetypes = {
@@ -71,6 +74,23 @@ for _, lsp in ipairs(servers) do
         "rs",
       },
     }
+  -- elseif lsp == "tsserver" then
+  --   lspconfig.tsserver.setup {
+  --     init_options = {
+  --       plugins = {
+  --         {
+  --           name = "@vue/typescript-plugin",
+  --           location = "/usr/local/lib/node_modules/@vue/typescript-plugin",
+  --           languages = { "javascript", "typescript", "vue" },
+  --         },
+  --       },
+  --     },
+  --     filetypes = {
+  --       "javascript",
+  --       "typescript",
+  --       "vue",
+  --     },
+  --   }
   else
     lspconfig[lsp].setup {
       on_attach = on_attach,

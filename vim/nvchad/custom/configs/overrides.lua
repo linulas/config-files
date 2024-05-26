@@ -39,6 +39,7 @@ M.treesitter = {
     "graphql",
     "yaml",
     "svelte",
+    "vue"
   },
   auto_install = true,
   rainbow = {
@@ -64,6 +65,7 @@ M.mason = {
     "json-lsp",
     "prettierd",
     "eslint_d",
+    "vls",
 
     -- graphql
     "graphql-language-service-cli",

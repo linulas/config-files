@@ -73,7 +73,7 @@ local function configure()
       preLaunchTask = "build",
       program = function()
         -- return vim.fn.input("Path to dll", vim.fn.getcwd() .. "/bin/Debug/", "file")
-        return vim.fn.input("Path to dll", vim.fn.getcwd() .. "/src/MedborgarappHost/bin/Debug/net6.0/MedborgarappHost.dll", "file")
+        return vim.fn.input("Path to dll", vim.fn.getcwd() .. "", "file")
       end,
     },
   }

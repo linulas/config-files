@@ -43,7 +43,7 @@ local plugins = {
     opts = overrides.telescope,
   },
   {
-    "NvChad/nvterm",
+    "zbirenbaum/nvterm",
     opts = overrides.nvterm,
   },
 
@@ -68,7 +68,8 @@ local plugins = {
       "theHamsta/nvim-dap-virtual-text",
       "rcarriga/nvim-dap-ui",
       "nvim-telescope/telescope-dap.nvim",
-      { "leoluz/nvim-dap-go", module = "dap-go" },
+      "nvim-neotest/nvim-nio",
+      { "leoluz/nvim-dap-go",   module = "dap-go" },
     },
     config = function()
       require("custom.configs.dap").setup()

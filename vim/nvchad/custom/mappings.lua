@@ -38,13 +38,13 @@ M.ergo = {
     ["td"] = { "i- [ ] #next ", "Add markdown task", opts = { nowait = true } },
     [")"] = {
       function()
-        require("nvchad_ui.tabufline").tabuflineNext()
+        require("nvchad.tabufline").tabuflineNext()
       end,
       "goto next buffer",
     },
     ["("] = {
       function()
-        require("nvchad_ui.tabufline").tabuflinePrev()
+        require("nvchad.tabufline").tabuflinePrev()
       end,
       "goto next buffer",
     },
@@ -131,14 +131,6 @@ M.git = {
     ["<leader>gc"] = { ":LazyGitConfig<CR>", "Open lazygit config", opts = { nowait = true } },
     ["<leader>gd"] = { ":DiffviewOpen<CR>", "Open diffview", opts = { nowait = true } },
     ["<leader>gq"] = { ":DiffviewClose<CR>", "Close diffview", opts = { nowait = true } },
-  },
-}
-
-M.bufferstuff = {
-  n = {
-    ["f"] = { ":HopWord<cr>", "Hop word on the entire buffer", opts = { nowait = true } },
-    [";"] = { ":HopChar1CurrentLine<cr>", "Hop 1 character on current line", opts = { nowait = true } },
-    ["<leader>cb"] = { ":%bd|e#|bd#<CR>", "Close all except active buffer", opts = { nowait = true } },
   },
 }
 
