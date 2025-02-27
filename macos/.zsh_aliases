@@ -1,0 +1,17 @@
+# projects
+alias portfolio="cd ~/code/portfolio-client && nvim"
+alias pingstcms="cd ~/code/pingstumea/cms && nvim"
+alias pingstweb="cd ~/code/pingstumea/web && nvim"
+alias _bmu="cd ~/code/back-me-up && nvim"
+alias rmssh="rm -r ./.ssh-connection*"
+
+# configs
+alias aliasconf="nvim ~/.zsh_aliases"
+alias updateconf="source ~/.zshrc && source ~/.zsh_aliases"
+alias zshconf="nvim ~/.zshrc"
+alias vimconf="cd  ~/.config/nvim/ && nvim"
+alias kbconf="cd ~/.keyboard && nvim"
+
+# general
+alias clearspot="rm -r ~/Library/Application\ Support/Spotify/PersistentCache"
+alias getip="ipconfig getifaddr en0"
